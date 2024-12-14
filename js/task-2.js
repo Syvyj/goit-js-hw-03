@@ -1,9 +1,9 @@
-function getShippingMessage(country, price, deliveryFee) {
-  const totalPrice = price + deliveryFee;
-  return `Shipping to ${country} will cost ${totalPrice} credits`;
+function slugify(title) {
+  return title.toLowerCase().split(' ').join('-');
 }
 
-// Перевірка коректності роботи
-console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+// Test:
+console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
+console.log(slugify("English for developer")); // "english-for-developer"
+console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
+console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
